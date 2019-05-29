@@ -1,0 +1,22 @@
+<div class="review">
+
+	<div class="review-rating" data-score="<%= review.rating %>"></div>
+	<p class="review-comment"><%= review.comment %></p>
+
+
+	<% if user_signed_in? %>
+
+		<% if review.user_id == current_user.id %>
+
+			<div class="links btn-group">
+
+				<%= link_to "Chỉnh sửa", edit_food_review_path(review.food, review), class: "btn btn-custom" %>
+				<%= link_to "Xóa", food_review_path(review.food, review), method: :delete, data: { confirm: "Bạn có muốn xóa bình luận này không?" }, class: "btn btn-custom" %>
+
+			</div>
+		
+		<% end %>	
+
+	<% end %>
+
+</div>		

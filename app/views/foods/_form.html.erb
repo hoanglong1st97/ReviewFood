@@ -1,0 +1,12 @@
+<%= simple_form_for @food, :html => { :multipart => true} do |f| %>
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Chọn danh mục") %>
+    <%= f.file_field :food_img %>
+    <%= f.input :name, label:"Tên món:" %>
+    <%= f.input :author, label:"Tên quán:"%>
+    <%= f.input :desciption, label:"Mô tả:" %>
+    <%= f.input :address, label:"Địa chỉ:" %>
+    <%= f.input :time, label:"Giờ hoạt động:" %>
+    <%= f.input :price, label:"Giá thành:"%>
+    <%= f.input :sale, label:"Giảm giá:" %>
+    <%= f.button :submit , :class => 'btn-custom2'%>
+<% end %>
